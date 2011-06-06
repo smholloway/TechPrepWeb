@@ -13,15 +13,19 @@
 
   <div class="field">
     <%= f.label :front %><br />
-    <%= f.text_area :front %>
+    <%= f.text_area :front, :rows => 4, :cols => 60 %>
   </div>
   <div class="field">
     <%= f.label :back %><br />
-    <%= f.text_area :back %>
+    <%= f.text_area :back, :rows => 4, :cols => 60 %>
   </div>
   <div class="field">
     <%= f.label :raw %><br />
-    <%= f.text_area :raw %>
+    <%= f.text_area :raw, :rows => 4, :cols => 60 %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list %><br />
+    <%= f.text_area :tag_list, :rows => 1, :cols => 60 %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -15,6 +15,10 @@
   <%= @question.raw %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <%= @question.tag_list %>
+</p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
