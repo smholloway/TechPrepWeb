@@ -1,0 +1,28 @@
+html, body {
+	background: #fff;
+	color: #000;
+}
+#questions_list {
+}
+#questions_list ul {
+	list-style-type: none;
+}
+#questions_list ul li {
+	margin: 5px auto;
+	background: #fff;
+	border-radius: 5px;
+	
+}
+#questions_list ul li a {
+	padding: 5px;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+}
+.button {
+	margin: 15px auto;
+	padding: 2px 5px 3px;
+	background: #fff;
+	border-radius: 5px;
+	text-decoration: none;
+}

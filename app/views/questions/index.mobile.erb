@@ -1,0 +1,9 @@
+<h1>Questions</h1>
+
+<div id="questions_list">
+	<ul>
+	<% for question in @questions %>
+		<li><%= link_to truncate(strip_tags(question.front), :length => 30, :omission => "..."), question %></li>
+	<% end %>
+	</ul>
+</div>

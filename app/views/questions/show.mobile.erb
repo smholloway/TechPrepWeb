@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></div>
+
+<div id="front">
+  <%= @question.front %>
+</div>
+
+<div id="back">
+  <%= @question.back %>
+</div>
+
+<div id="tags">
+  <b>Tags:</b>
+  <%= @question.tag_list %>
+</div>
+
+<br/>
+
+<%= link_to 'Back', questions_path, :class => "button" %>
