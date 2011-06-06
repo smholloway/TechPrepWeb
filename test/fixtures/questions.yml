@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  front: MyText
+  back: MyText
+  raw: MyText
+
+two:
+  front: MyText
+  back: MyText
+  raw: MyText
