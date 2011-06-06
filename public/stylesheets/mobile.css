@@ -34,11 +34,26 @@ html, body {
 .button {
 	background: #fff;
 	color: #904040;
-	width: 200px;
-	margin: 5px auto;
-	padding: 3px 100px;
+	margin: 5px;
 	border-radius: 5px;
 	text-decoration: none;
+	text-align: center;
+}
+.button a {
+	padding: 5px 0;
+	text-decoration: none;
+	display: block;
+}
+.half_button {
+	width: 145px;
+	float: left;
+}
+.full_button {
+	width: 300px;
+}
+.blah {
+	padding: 3px 30px;
+	padding: 3px 100px;
 }
 #front:hover, #back:hover {
 	cursor: pointer;
