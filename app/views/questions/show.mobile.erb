@@ -1,11 +1,17 @@
 <p id="notice"><%= notice %></div>
 
 <div id="front">
-  <%= @question.front %>
+	<div class="flashcard">
+  	<%= @question.front %>
+	</div>
+	<div class="rArr">&rArr;</div><br class="spacer"/>
 </div>
 
 <div id="back">
-  <%= @question.back %>
+	<div class="flashcard">
+  	<%= @question.back %>
+	</div>
+	<div class="lArr">&lArr;</div><br class="spacer"/>
 </div>
 
 <div id="tags">

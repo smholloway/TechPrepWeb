@@ -2,3 +2,38 @@ html, body {
 	background: #000;
 	color: #fff;
 }
+.flashcard {
+	height: 200px;
+}
+.lArr { float: left; }
+.rArr { float: right; }
+
+#questions_list {
+}
+#questions_list ul {
+	list-style-type: none;
+}
+#questions_list ul li {
+	margin: 5px auto;
+	background: #fff;
+	border-radius: 5px;
+	
+}
+#questions_list ul li a {
+	padding: 5px;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+}
+.button {
+	width: 200px;
+	margin: 5px auto;
+	padding: 3px 15px;
+	background: #fff;
+	border-radius: 5px;
+	text-decoration: none;
+}
+#front:hover, #back:hover {
+	cursor: pointer;
+}
+.spacer { clear: both; }

@@ -1,6 +1,6 @@
 html, body {
 	background: #fff;
-	color: #000;
+	color: #333;
 }
 #questions_list {
 }
@@ -20,7 +20,7 @@ html, body {
 	cursor: pointer;
 }
 .button {
-	margin: 15px auto;
+	width: 200px;
 	padding: 2px 5px 3px;
 	background: #fff;
 	border-radius: 5px;
