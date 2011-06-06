@@ -3,11 +3,16 @@ html, body {
 	color: #fff;
 }
 .flashcard {
-	height: 200px;
+	height: 260px;
 }
-.lArr { float: left; }
-.rArr { float: right; }
-
+.lArr { 
+	float: left;
+	color: #904040;
+}
+.rArr { 
+	float: right; 
+	color: #904040;
+}
 #questions_list {
 }
 #questions_list ul {
@@ -20,16 +25,18 @@ html, body {
 	
 }
 #questions_list ul li a {
+	color: #904040;
 	padding: 5px;
 	text-decoration: none;
 	display: block;
 	cursor: pointer;
 }
 .button {
+	background: #fff;
+	color: #904040;
 	width: 200px;
 	margin: 5px auto;
-	padding: 3px 15px;
-	background: #fff;
+	padding: 3px 100px;
 	border-radius: 5px;
 	text-decoration: none;
 }
