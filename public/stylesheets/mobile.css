@@ -31,6 +31,10 @@ html, body {
 	display: block;
 	cursor: pointer;
 }
+#buttons {
+	margin: auto;
+	width: 290px;
+}
 .button {
 	background: #fff;
 	color: #904040;
