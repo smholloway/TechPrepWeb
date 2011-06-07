@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  #protect_from_forgery
 
 	before_filter :prepare_for_mobile
 	before_filter :url_salt_valid?
@@ -22,20 +22,42 @@ class ApplicationController < ActionController::Base
 		end
 
 		def url_salt_valid?
-      # retrieve input parameters
-      params[:timestamp] ? epoch_string = params[:timestamp] : epoch_string = ''
-			params[:product] ? product = params[:product] : product = '' 
-      params[:encr] ? encr = params[:encr] : encr = ''
+      logger.debug "I entered the bowels of Rails"
 
+      # retrieve input parameters
+      if params[:timestamp] 
+        epoch_string = params[:timestamp]
+      else 
+        return redirect_to root_path
+      end
+      if params[:product]
+        product = params[:product]
+      else
+        return redirect_to root_path 
+      end
+      if params[:encr] 
+        encr = params[:encr]
+      else
+        return redirect_to root_path
+      end
+      
+      logger.debug "... and it stunk"
+      
  			salt = "234j5gakli2l3k4j5apiosdfj098yasdf!"
  			encrypted_string = Digest::MD5.hexdigest(epoch_string + salt + product)
 
       # encryptedString should match params[:encr], the input hash
-      return false if encr != encrypted_string
+      return redirect_to root_path if encr != encrypted_string
+      
+      logger.debug "... but then it had a beano"
       
       # ensure the timestamp is fresh by comparing to current time
-			time_difference = Time.now.to_i - epoch_string
-      return (time_difference > 0 and time_difference < 10)
+			time_difference = Time.now.to_i - epoch_string.to_i
+			if (time_difference > 0 && time_difference < 60)
+			  logger.debug "... and we were in love and had buttsecks"
+      else
+        return redirect_to root_path
+      end
 		end
 
 end

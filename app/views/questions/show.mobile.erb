@@ -14,8 +14,20 @@
   </div>
 
   <ul class="individual">
-    <li class="half_button left"><%= link_to 'Previous question', questions_path %></li>
-    <li class="half_button right"><%= link_to 'Next question', questions_path %></li>
+    <li class="half_button left">
+      <% if @prev.blank? %>
+        <%= link_to 'Questions', questions_path %>
+      <% else %>
+        <%= link_to 'Previous question', question_path(@prev) %>
+      <% end %>
+    </li>
+    <li class="half_button right">
+      <% if @next.blank? %>
+        <%= link_to 'Questions', questions_path %>
+      <% else %>
+        <%= link_to 'Next question', question_path(@next) %>
+      <% end %>
+    </li>
     <br class="spacer"/>
   </ul>
 </div>

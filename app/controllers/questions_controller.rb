@@ -4,8 +4,12 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.all
-
+    if params[:product]
+      @questions = Question.tagged_with(params[:product])
+    else 
+      @questions = Question.all
+    end
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
@@ -18,6 +22,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 		@tags = @question.tags
 
+    @prod = params[:product] if params[:product]
+    @id = params[:id] if params[:id]
+
+    if @prod and @id
+		  @prev = Question.tagged_with(@prod).where("Questions.id < #{@id}").limit(1).first
+		  @next = Question.tagged_with(@prod).where("Questions.id > #{@id}").limit(1).first
+		else
+		  @prev = @next = nil
+    end
+      
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @question }
