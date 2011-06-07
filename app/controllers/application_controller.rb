@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery
 
 	before_filter :prepare_for_mobile
-	before_filter :url_salt_valid?
+	#before_filter :url_salt_valid?
 
 	private
 
