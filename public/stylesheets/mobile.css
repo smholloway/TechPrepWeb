@@ -1,9 +1,11 @@
 html, body {
-	background: #000;
+	background: #333;
 	color: #fff;
 }
 .flashcard {
 	height: 260px;
+	overflow: hidden;
+	overflow-y: auto;
 }
 .lArr { 
 	float: left;
@@ -44,6 +46,7 @@ html, body {
 	text-align: center;
 }
 .button a {
+	color: #904040;
 	padding: 5px 0;
 	text-decoration: none;
 	display: block;
