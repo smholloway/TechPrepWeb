@@ -45,11 +45,12 @@ html, body {
 	display: block;
 }
 .half_button {
-	width: 145px;
+	width: 135px;
 	float: left;
 }
 .full_button {
-	width: 300px;
+	width: 280px;
+	float: left;
 }
 .blah {
 	padding: 3px 30px;
@@ -59,3 +60,5 @@ html, body {
 	cursor: pointer;
 }
 .spacer { clear: both; }
+.left { float: left; }
+.right { float: right; }
