@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InterviewFlashcards</title>
+  <title>Interview Flashcards</title>
   <%= stylesheet_link_tag 'web' if !mobile_device? %>
 	<%= stylesheet_link_tag 'mobile' if mobile_device? %>
+	<%#= stylesheet_link_tag 'jqtouch' if mobile_device? %>
+	<%#= stylesheet_link_tag 'jqt/theme.css' if mobile_device? %>
 	<%= javascript_include_tag "jquery.js" %>
 	<%= javascript_include_tag "application.js" %>
+	<%#= javascript_include_tag "jqtouch.js" if mobile_device? %>
+	<% if !mobile_device? %>
+	<script type="text/javascript" charset="utf-8">
+		var jQT = new $.jQTouch({
+			icon: 'jqtouch.png',
+			addGlossToIcon: false,
+			startupScreen: 'jqt_startup.png',
+			statusBar: 'black',
+			preloadImages: [
+				'images/jqt/back_button.png',
+				'images/jqt/back_button_clicked.png',
+				'images/jqt/button_clicked.png',
+				'images/jqt/grayButton.png',
+				'images/jqt/whiteButton.png',
+				'images/jqt/loading.gif'
+			]
+		});
+		// Some sample Javascript functions:
+		$(function(){
+			$('a[target="_blank"]').click(function() {
+			if (confirm('This link opens in a new window.')) {
+				return true;
+			} else {
+				$(this).removeClass('active');
+				return false;
+			}
+		});
+	});
+	</script>
+	<% end %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <div id="site">
+  	<div id="header">
+  		<h1>Interview Flashcards</h1>
+  		<%= link_to 'Home', root_path, :class => "top_button" %>
+  	</div>
+
+  	<div id="yield">
+  	  <%= yield %>
+  	</div>
+
+  </div>
+  
+  <div id="footer">
+  	&copy; Copyright 2011.
+  </div>
 
 </body>
 </html>

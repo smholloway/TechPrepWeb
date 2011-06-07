@@ -1,9 +1,15 @@
-<h1>Questions</h1>
+<% title 'Interview Questions' %>
 
-<div id="questions_list">
-	<ul>
-	<% for question in @questions %>
-		<li><%= link_to truncate(strip_tags(question.front), :length => 30, :omission => "..."), question %></li>
-	<% end %>
-	</ul>
+<div id="questions" class="current">  
+  <ul class="rounded">
+  <% for question in @questions %>
+    <li><%= link_to truncate(strip_tags(question.front), :length => 40, :omission => "..."), question %></li>
+  <% end %>
+  </ul>
+
+  <ul class="individual">
+    <li><%= link_to 'Previous question', questions_path, :class => "half_button left" %></li>
+    <li><%= link_to 'Next question', questions_path, :class => "half_button right" %></li>
+    <br class="spacer"/>
+  </ul>
 </div>

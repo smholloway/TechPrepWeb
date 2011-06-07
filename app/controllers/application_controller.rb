@@ -20,4 +20,11 @@ class ApplicationController < ActionController::Base
 			request.format = :mobile if mobile_device?
 		end
 
+		def url_salt
+			# require 'digest/md5'
+ 			salt = "234j5gakli2l3k4j5apiosdfj098yasdf"
+			epochString = Time.now.to_i
+ 			encryptedString = Digest::MD5.hexdigest(epochString + salt)
+		end
+
 end

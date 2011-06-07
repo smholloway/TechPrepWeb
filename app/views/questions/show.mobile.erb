@@ -1,37 +1,21 @@
-<p id="notice"><%= notice %></div>
+<div id="question" class="current">
+  <div id="front">
+  	<div class="flashcard">
+    	<%= @question.front %>
+  	</div>
+  	<div class="rArr">(answer) &rArr;</div><br class="spacer"/>
+  </div>
 
-<div id="front">
-	<div class="flashcard">
-  	<%= @question.front %>
-	</div>
-	<div class="rArr">(answer) &rArr;</div><br class="spacer"/>
-</div>
+  <div id="back">
+  	<div class="flashcard">
+    	<%= @question.back %>
+  	</div>
+  	<div class="lArr">&lArr; (question)</div><br class="spacer"/>
+  </div>
 
-<div id="back">
-	<div class="flashcard">
-  	<%= @question.back %>
-	</div>
-	<div class="lArr">&lArr; (question)</div><br class="spacer"/>
-</div>
-
-<div id="tags">
-  <b>Tags:</b>
-  <%= @question.tag_list %>
-</div>
-
-<br/>
-
-<div id="buttons">
-	<div class="button half_button">
-		<%= link_to 'Previous question', questions_path %>
-	</div>
-	<div class="button half_button">
-		<%= link_to 'Next question', questions_path %>
-	</div>
-
-	<br class="spacer"/>
-
-	<div class="button full_button">
-		<%= link_to 'Questions', questions_path %>
-	</div>
+  <ul class="individual">
+    <li><%= link_to 'Previous question', questions_path, :class => "half_button left" %></li>
+    <li><%= link_to 'Next question', questions_path, :class => "half_button right" %></li>
+    <br class="spacer"/>
+  </ul>
 </div>

@@ -1,0 +1,27 @@
+<h1>Technical Interview Helper</h1>
+<p>Simply the best.</p>
+<h2>Links</h2>
+<p><%= link_to 'Questions', questions_path %></p>
+
+<div id="home" class="current">
+            <div class="toolbar">
+                <h1>Interview Flashcards</h1>
+                <a class="button slideup" id="infoButton" href="#about">About</a>
+            </div>
+            <ul class="rounded">
+                <li class="arrow"><%= link_to 'Questions', questions_path %></li>
+                <li class="arrow"><a href="#demos">Demos</a> <small class="counter">2</small></li>
+            </ul>
+            <h2>External Links</h2>
+            <ul class="rounded">
+                <li class="forward"><a href="http://www.pairstream.com/" target="_blank">Pairstream</a></li>
+                <li class="forward"><a href="http://code.google.com/p/jqtouch/w/list" target="_blank">Google Code</a></li>
+            </ul>
+            <ul class="individual">
+                <li><%= link_to 'Previous question', questions_path %></li>
+                <li><%= link_to 'Next question', questions_path %></li>
+            </ul>
+            <div class="info">
+                <p>Add this page to your home screen to view the custom icon, startup screen, and full screen mode.</p>
+            </div>
+        </div>
