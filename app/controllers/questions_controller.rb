@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  #before_filter :url_salt_valid?
+
   # GET /questions
   # GET /questions.xml
   def index

@@ -13,9 +13,9 @@
   	<div class="lArr">&lArr; (question)</div><br class="spacer"/>
   </div>
 
-  <ul class="individual">
-    <li><%= link_to 'Previous question', questions_path, :class => "half_button left" %></li>
-    <li><%= link_to 'Next question', questions_path, :class => "half_button right" %></li>
+  <ul>
+    <li class="half_button left"><%= link_to 'Previous question', questions_path %></li>
+    <li class="half_button right"><%= link_to 'Next question', questions_path %></li>
     <br class="spacer"/>
   </ul>
 </div>

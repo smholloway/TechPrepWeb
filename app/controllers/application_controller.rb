@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
 	before_filter :prepare_for_mobile
+	before_filter :url_salt_valid?
 
 	private
 
@@ -20,11 +21,21 @@ class ApplicationController < ActionController::Base
 			request.format = :mobile if mobile_device?
 		end
 
-		def url_salt
-			# require 'digest/md5'
- 			salt = "234j5gakli2l3k4j5apiosdfj098yasdf"
-			epochString = Time.now.to_i
- 			encryptedString = Digest::MD5.hexdigest(epochString + salt)
+		def url_salt_valid?
+      # retrieve input parameters
+      params[:timestamp] ? epoch_string = params[:timestamp] : epoch_string = ''
+			params[:product] ? product = params[:product] : product = '' 
+      params[:encr] ? encr = params[:encr] : encr = ''
+
+ 			salt = "234j5gakli2l3k4j5apiosdfj098yasdf!"
+ 			encrypted_string = Digest::MD5.hexdigest(epoch_string + salt + product)
+
+      # encryptedString should match params[:encr], the input hash
+      return false if encr != encrypted_string
+      
+      # ensure the timestamp is fresh by comparing to current time
+			time_difference = Time.now.to_i - epoch_string
+      return (time_difference > 0 and time_difference < 10)
 		end
 
 end
