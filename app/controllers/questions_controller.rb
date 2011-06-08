@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
     @id = params[:id] if params[:id]
 
     if @prod and @id
-		  @prev = Question.tagged_with(@prod).where("Questions.id < #{@id}").order('id ASC').limit(1).first
+		  @prev = Question.tagged_with(@prod).where("Questions.id < #{@id}").order('id DESC').limit(1).first
 		  @next = Question.tagged_with(@prod).where("Questions.id > #{@id}").order('id ASC').limit(1).first
 		else
 		  @prev = @next = nil
