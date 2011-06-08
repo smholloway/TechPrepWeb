@@ -5,9 +5,9 @@ class QuestionsController < ApplicationController
   # GET /questions.xml
   def index
     if params[:product]
-      @questions = Question.tagged_with(params[:product])
+      @questions = Question.tagged_with(params[:product]).order('id ASC')
     else 
-      @questions = Question.all
+      @questions = Question.order('id ASC')
     end
       
     respond_to do |format|

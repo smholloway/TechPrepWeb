@@ -28,16 +28,19 @@ class ApplicationController < ActionController::Base
       if params[:timestamp] 
         epoch_string = params[:timestamp]
       else 
+        flash[:notice] = "No"
         return redirect_to root_path
       end
       if params[:product]
         product = params[:product]
       else
+        flash[:notice] = "No"
         return redirect_to root_path 
       end
       if params[:encr] 
         encr = params[:encr]
       else
+        flash[:notice] = "No"
         return redirect_to root_path
       end
       
@@ -47,7 +50,10 @@ class ApplicationController < ActionController::Base
  			encrypted_string = Digest::MD5.hexdigest(epoch_string + salt + product)
 
       # encryptedString should match params[:encr], the input hash
-      return redirect_to root_path if encr != encrypted_string
+      if encr != encrpyted_string
+        flash[:notice] = "No"
+        return redirect_to root_path
+      end
       
       logger.debug "... but then it had a beano"
       
@@ -56,6 +62,7 @@ class ApplicationController < ActionController::Base
 			if (time_difference > 0 && time_difference < 60)
 			  logger.debug "... and we were in love and had buttsecks"
       else
+        flash[:notice] = "No"
         return redirect_to root_path
       end
 		end
