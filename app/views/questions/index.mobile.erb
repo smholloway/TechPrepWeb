@@ -3,7 +3,7 @@
 <div id="questions" class="current">  
   <ul class="rounded">
   <% for question in @questions %>
-    <li><%= link_to truncate(strip_tags(question.front), :length => 50, :omission => "..."), question %></li>
+    <li><%= link_to truncate(h(question.front), :length => 50, :omission => "..."), question %></li>
   <% end %>
   </ul>
 </div>

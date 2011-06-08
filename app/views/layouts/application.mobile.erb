@@ -4,6 +4,8 @@
   <title>Interview Flashcards - <%= yield_for(:title, "Winning") %></title>
   <%= stylesheet_link_tag 'web' if !mobile_device? %>
 	<%= stylesheet_link_tag 'mobile' if mobile_device? %>
+	<%= stylesheet_link_tag 'prettify' %>
+  <%= javascript_include_tag "prettify.js" %>
 	<%= javascript_include_tag "jquery.js" %>
 	<%= javascript_include_tag "application.js" %>
   <%= csrf_meta_tag %>
