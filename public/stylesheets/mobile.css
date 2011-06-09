@@ -134,8 +134,9 @@ ul.individual li a {
 #footer {
   text-align: center;
   font-size: 12px;
-  height: 20px;
-  margin-top: -20px;
+  line-height: 16px;
+  height: 16px;
+  margin-top: -16px;
 }
 #yield {
   margin: 5px;
@@ -143,7 +144,7 @@ ul.individual li a {
 
 
 .flashcard {
-	height: 250px;
+	height: 260px;
 	overflow: hidden;
 	overflow-y: auto;
 }
@@ -212,6 +213,9 @@ ul.individual li a {
   background: none;
   -webkit-border-image: url(../../images/button.png) 0 5 0 5;
 	
+}
+#back, #tags {
+	display: none;
 }
 #front:hover, #back:hover {
 	cursor: pointer;

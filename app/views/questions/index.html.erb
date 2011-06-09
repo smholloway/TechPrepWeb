@@ -1,7 +1,8 @@
 <h1>Listing questions</h1>
 
-<table>
+<table border="1">
   <tr>
+    <th>ID</th>
     <th>Front</th>
     <th>Back</th>
     <th>Raw</th>
@@ -12,6 +13,7 @@
 
 <% @questions.each do |question| %>
   <tr>
+    <td><%= question.id %></td>
     <td><%= question.front %></td>
     <td><%= question.back %></td>
     <td><%= question.raw %></td>

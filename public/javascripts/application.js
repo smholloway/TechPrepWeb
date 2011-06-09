@@ -1,17 +1,17 @@
 $(document).ready(function() {
+	$("#front").show();
+	$("#back").hide();
+	$("#tags").hide();
 
-	$('#front').show();
-	$('#back').hide();
-	$('#tags').hide();
-
-  $('#front').click(function() {
-		$('#front').hide();
-		$('#back').show();
+  $("#front").click(function() {
+		$("#front").hide();
+		$("#back").show();
 	});
 
-  $('#back').click(function() {
-		$('#back').hide();
-		$('#front').show();
+  $("#back").click(function() {
+		$("#back").hide();
+		$("#front").show();
 	});
 
+	$(":input:enabled:visible:first").focus();
 });
