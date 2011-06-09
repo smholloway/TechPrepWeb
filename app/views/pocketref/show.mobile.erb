@@ -1,0 +1,25 @@
+<div id="question" class="current">
+  <div id="raw">
+  	<div class="flashcard">
+    	<%= raw @question.raw %>
+  	</div>
+  </div>
+
+  <ul class="individual">
+    <li class="half_button left">
+      <% if @prev.blank? %>
+        <%= link_to 'Pocket Reference', pocketref_path %>
+      <% else %>
+        <%= link_to 'Previous entry', pocketref_path+@prev.id %>
+      <% end %>
+    </li>
+    <li class="half_button right">
+      <% if @next.blank? %>
+        <%= link_to 'Pocket Reference', pocketref_path %>
+      <% else %>
+        <%= link_to 'Next entry', pocketref_path+@next.id %>
+      <% end %>
+    </li>
+    <br class="spacer"/>
+  </ul>
+</div>

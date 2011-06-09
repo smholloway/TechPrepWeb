@@ -1,5 +1,9 @@
 InterviewFlashcards::Application.routes.draw do
+	resources :pocketref
   resources :questions
+
+  #get "pocketref/index"
+  #get "pocketref/show"
 
   get "home/index"
 

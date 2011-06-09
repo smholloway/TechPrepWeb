@@ -1,0 +1,9 @@
+<% title 'Interview Questions' %>
+
+<div id="questions" class="current">  
+  <ul class="rounded">
+  <% for question in @questions %>
+    <li><%= link_to truncate(h(question.front), :length => 50, :omission => "..."), question %></li>
+  <% end %>
+  </ul>
+</div>
