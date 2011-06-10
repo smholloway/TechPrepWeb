@@ -1,9 +1,8 @@
 InterviewFlashcards::Application.routes.draw do
-	resources :pocketref
-  resources :questions
+	#pocketref does not have all RESTful routes, but this provides more flexibility just in case
+	resources :pocketref 
 
-  #get "pocketref/index"
-  #get "pocketref/show"
+  resources :questions
 
   get "home/index"
 
