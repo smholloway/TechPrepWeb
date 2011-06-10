@@ -2,7 +2,7 @@
 # This pulls the contents (schema, data, indexes, sequences) of the remote Heroku database down into a local database specified in config/database.yml, or at the database URL provided as an argument as described in the previous section.
 namespace :essandesstest do
 	desc 'Pulls a heroku database'
-	task :backup do
+	task :pull_db do
 		# capture the backup bundle
 		timestamp = `date -u '+%Y-%m-%d-%H-%M'`.chomp
 		db_backup = "sqlite://essandesstest-#{timestamp}.db"
