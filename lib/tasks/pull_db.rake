@@ -4,13 +4,14 @@ namespace :essandesstest do
 	desc 'Pulls a heroku database'
 	task :pull_db do
 		# capture the backup bundle
+		app_name = 'essandesstest'
 		timestamp = `date -u '+%Y-%m-%d-%H-%M'`.chomp
-		db_backup = "sqlite://essandesstest-#{timestamp}.db"
+		db_backup = "#{app_name}-#{timestamp}.db"
 		puts "Capturing database #{db_backup}..."
-		`heroku db:pull --confirm essandesstest '#{db_backup}'`
+		`heroku db:pull --confirm essandesstest sqlite://'#{db_backup}'`
 
 		# move the backup
-		puts "Moving bundle to backups/#{db_backup}.dump"
+		puts "Moving db backup to backups/#{db_backup}"
 		`mkdir -p backups`
 		`mv '#{db_backup}' backups/'#{db_backup}'`
 	end
